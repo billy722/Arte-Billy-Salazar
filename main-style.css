@@ -2,6 +2,11 @@ html{
     /* DEFINO PARA USO DE REM */
     font-size: 16px;
 }
+h1, h2, h3, h4, h5, h6, p{
+    padding: 0.2rem;
+    margin: 0.2rem;
+}
+
 /* FUENTES */
 @font-face{
     font-family: 'Montserrat';
@@ -22,31 +27,93 @@ body{
     font-family: 'Montserrat';
 }
 
+.box{
+    background-color: rgb(241, 239, 239);
+    box-shadow: 1px 0px 10px 1px rgb(207, 205, 205);
+    border-radius: 5px;
+    padding: 1rem;
+
+    h2{
+        font-size: 1.2rem;
+        color: gray;
+    }
+}
+
+header{
+    height: 0.2rem;
+    /* background-color: rgba(255, 64, 0, 0.691); */
+    /* background-color: rgba(255, 64, 0, 0.763); */
+    /* background-color: rgba(162, 88, 64, 0.763); */
+}
+
+
 main{
     display: grid;
-    grid-template-columns: 25% 75%;
-    height: 100vh;
+    grid-template-columns: 25% 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    /* al alto de pantalla le resto 2rem por margin top y bottom y 0.2rem de liena de header */
+    height: calc(100vh - 2rem - 0.2rem);
 
-    .section_about{
+    .section_izquierda{
         background-color: white;
         padding: 1rem;
         background-image: url('./img/billy_gris.jpg');
         background-size: 170%;
         background-position: 30% 0%;
-        box-shadow: 1px 0px 10px 1px rgb(97, 97, 97);
-        z-index: 1;
 
+
+        h1{
+            text-align: end;
+            color: rgb(47, 47, 47);
+        }
     }
-    .section_obra{
-        background-color: rgb(221, 221, 221);
-        padding: 1rem;
-        z-index: 0;
 
-        h1, p{
-            padding: 0;
-            margin:0;
-            color: rgb(0, 0, 0);
-            text-align: start;
+    .section_derecha{
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr 30%;
+        grid-template-rows: 15% 1fr 1fr 10%;
+
+        .article_about{
+            font-style: italic;
+
+            p{
+                color: rgb(0, 0, 0);
+                text-align: start;
+                text-wrap: balance;
+            }
+
+        }
+
+        .article_curatoria{
+            grid-row: span 2;
+            font-style: italic;
+        }
+
+        .article_obra{
+            grid-row: span 3;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1rem;
+            align-content: start;
+
+            .obra{
+                height: 100px;
+                /* background-image: url('./img/ajies.jpg'); */
+                /* background-size: cover; */
+                background-color: rgb(117, 117, 117);
+            }
+        }
+
+        .article_muestras{
+            grid-row: span 2;
+        }
+
+        .article_contacto{
+            grid-column: span 2;
+            /* background-color: rgb(42, 41, 41); */
+
         }
     }
 }
