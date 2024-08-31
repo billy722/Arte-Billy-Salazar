@@ -25,18 +25,19 @@ body{
 main{
     display: grid;
     grid-template-columns: 25% 75%;
-    height: 100vh;
 
     .section_about{
         background-color: white;
-        padding: 1rem;
         background-image: url('./img/billy_gris.jpg');
-        background-size: 170%;
+        background-size: cover;
         background-position: 30% 0%;
+        background-repeat: no-repeat;
         box-shadow: 1px 0px 10px 1px rgb(97, 97, 97);
         z-index: 1;
+        height: 100vh;
 
     }
+
     .section_obra{
         background-color: rgb(221, 221, 221);
         padding: 1rem;
